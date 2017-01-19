@@ -14,6 +14,7 @@ var convert = function(number) {
   var result = '';
   var value = number;
   var remainder = 0;
+  var temp = 0;
 
   if (number >= 4000) {
     return '';
@@ -22,9 +23,20 @@ var convert = function(number) {
   for (var i = 0; i < ordersOfMagnitude.length; i++) {
     var magnitude = ordersOfMagnitude[i];
     remainder = value % magnitude;
-    value = Math.floor(value / magnitude);
+    temp = Math.floor(value / magnitude);
 
-    for (var j = 1; j <= value; j++) {
+    if (temp >= 4) {
+      var part = temp * magnitude;
+      value -= part;
+      for (var j = 0; j < Math.floor((ordersOfMagnitude[i-1] - part) / magnitude); j++) {
+        result += symbolTable[magnitude.toString()];
+      }
+      result += symbolTable[ordersOfMagnitude[i-1].toString()];
+
+      continue;
+    }
+
+    for (var j = 1; j <= temp; j++) {
       result += symbolTable[magnitude.toString()];
     }
     value = remainder;
