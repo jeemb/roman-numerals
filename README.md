@@ -27,8 +27,7 @@ jQuery
 * This implementation is limited to representing integers less than or equal to 3,999.
   * **Example Input**: 4000
   * **Example Output**: "" (empty string)
-* Lower order-of-magnitude symbols following higher order-of-magnitude ones represents an additive effect in value.
-Interpreting Roman numerals requires adding the value of symbols that follow sequential orders of magnitude.
+* Lower order-of-magnitude symbols following higher order-of-magnitude ones represents an additive effect in value. Interpreting Roman numerals requires adding the value of symbols that follow sequential orders of magnitude.
   * **Example Input**: 66
   * **Example Output**: "LXVI"
 * The limit of the additive property is 3 successive identical characters. Subtraction represented by a (sequence of) lower-magnitude symbol(s) preceding (a) higher-magnitude one(s) is used to conform to this rule.
